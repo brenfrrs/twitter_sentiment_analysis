@@ -4,7 +4,7 @@ import keyboard
 import pandas as pd
 import numpy as np
 import time
-
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 
 print('imported packages \n')
@@ -12,15 +12,38 @@ print('imported packages \n')
 main_df = pd.read_csv('apple_goog.csv', index_col=0)
 main_df = main_df.drop_duplicates(subset='c_tweet', keep="first")
 
-tagged_data = pd.DataFrame(columns=['message', 'positive', 'negative', 'neutral'])
+tagged_data = pd.read_csv('tagged.csv',index_col=0) 
 
 print('LOADED DATA')
 
 
 counter = 0
 
+#instantiate analyzer
+analyzer = SentimentIntensityAnalyzer()
+
+def sentiment_analyzer_scores(sentence):
+    score = analyzer.polarity_scores(sentence)
+    
+    if score['compound'] >= .05:
+        #positive sentiment
+        print('\033[92m' + sentence + '\033[00m')
+        
+    
+    elif score['compound'] <= -.05:
+        #negative sentiment
+        print('\033[91m' + sentence + '\033[00m')
+       
+
+    else:
+        #neutral
+        print('\033[97m' + sentence + '\033[00m')
+
+
+
+
 while True:
-    print(main_df.iloc[counter][7])
+    sentiment_analyzer_scores(main_df.iloc[counter][7])
     if keyboard.is_pressed('y'):
         tagged_data = tagged_data.append({'message':main_df.iloc[counter][7], 'positive':1, 'negative':0, 'neutral':0}, ignore_index=True)
         tagged_data.to_csv('tagged.csv')
@@ -47,4 +70,9 @@ while True:
         counter+=1
         time.sleep(.2)
         break
+
+    elif keyboard.is_pressed('x'):
+        print('SKIPPING to {}'.format(counter))
+        counter += 1
+        time.sleep(.12)
 
