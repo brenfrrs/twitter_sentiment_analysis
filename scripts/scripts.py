@@ -1,6 +1,8 @@
 import gcld3
 import re
 from string import digits
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import nltk
 
 def sentiment_analyzer_scores(sentence):
     '''
@@ -10,6 +12,7 @@ def sentiment_analyzer_scores(sentence):
     Instantiate analyzer before running this function:
     analyzer = SentimentIntensityAnalyzer()
     '''
+    analyzer = SentimentIntensityAnalyzer()
 
     score = analyzer.polarity_scores(sentence)
 
@@ -21,11 +24,6 @@ def sentiment_analyzer_scores(sentence):
         sent = 'neutral'
 
     return sent
-
-
-def lemmatize_text(text):
-     return [lemmatizer.lemmatize(word.replace(" ", "")) for word in tokenizer.tokenize(text)]
-#    return [stemming.stem(word) for word in tokenizer.tokenize(text)]
 
 def unlist(x):
     return ", ".join(x)
