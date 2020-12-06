@@ -1,7 +1,7 @@
 # Apple Product Launch Analysis (September - November, 2020)
 
 
-![apple_event](/Users/brendanferris/Desktop/twitter_sentiment_analysis/images/one-more-thing-november.jpg)
+![apple_event](./images/one-more-thing-november.jpg)
 
 **Authors:** [Dorjey Sherpa](Dorjeys3@gmail.com), [Brendan Ferris](brendanfrrs@gmail.com)
 
