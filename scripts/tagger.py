@@ -6,13 +6,26 @@ import numpy as np
 import time
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
+'''
+
+This script can be used to tag tweets quickly as positive/negative/neutral.
+
+press Y for "positive"
+press N for "negative"
+press space for "neutral"
+press x to skip a tweet
+
+
+'''
+
+
 
 print('imported packages \n')
 
 main_df = pd.read_csv('apple_goog.csv', index_col=0)
 main_df = main_df.drop_duplicates(subset='c_tweet', keep="first")
 
-tagged_data = pd.read_csv('tagged.csv',index_col=0) 
+tagged_data = pd.read_csv('tagged.csv',index_col=0)
 
 print('LOADED DATA')
 
@@ -24,16 +37,16 @@ analyzer = SentimentIntensityAnalyzer()
 
 def sentiment_analyzer_scores(sentence):
     score = analyzer.polarity_scores(sentence)
-    
+
     if score['compound'] >= .05:
         #positive sentiment
         print('\033[92m' + sentence + '\033[00m')
-        
-    
+
+
     elif score['compound'] <= -.05:
         #negative sentiment
         print('\033[91m' + sentence + '\033[00m')
-       
+
 
     else:
         #neutral
@@ -48,21 +61,21 @@ while True:
         tagged_data = tagged_data.append({'message':main_df.iloc[counter][7], 'positive':1, 'negative':0, 'neutral':0}, ignore_index=True)
         tagged_data.to_csv('tagged.csv')
         counter +=1
-        print('yes', counter)
+        print('Positive', counter)
         time.sleep(.2)
-    
+
     elif keyboard.is_pressed('n'):
         tagged_data = tagged_data.append({'message':main_df.iloc[counter][7], 'positive':0, 'negative':1, 'neutral':0}, ignore_index=True)
         tagged_data.to_csv('tagged.csv')
         counter += 1
-        print('no', counter)
+        print('Negative', counter)
         time.sleep(.2)
 
     elif keyboard.is_pressed('space'):
         tagged_data = tagged_data.append({'message':main_df.iloc[counter][7], 'positive':0, 'negative':0, 'neutral':1}, ignore_index=True)
         tagged_data.to_csv('tagged.csv')
         counter += 1
-        print('SPACEEEEEEEE')
+        print('NEUTRAL')
         time.sleep(.2)
 
     elif keyboard.is_pressed('esc'):
@@ -75,4 +88,3 @@ while True:
         print('SKIPPING to {}'.format(counter))
         counter += 1
         time.sleep(.12)
-
