@@ -9,47 +9,15 @@
 
 Over the past three months, Apple has had three major product launches:
 
-<table>
-<tr>
-<th>Event Name</th>
-<th> What was announced. </th>
-<th> Date/Link </th>
-</tr>
-<tr>
+| Event Name      | Products Announced                                                       | Date/Link         |
+|-----------------|--------------------------------------------------------------------------|-------------------|
+| Time Flies.     | Apple Watch, Apple Fitness+, Apple One, IPad                             | [September 15,2020](https://www.youtube.com/watch?v=b13xnFp_LJs&t=2353s) |
+| Hi, Speed.      | HomePod Mini, IPhone 12, IPhone 12 Pro                                   | [October 13,2020](https://www.youtube.com/watch?v=KR0g-1hnQPA)   |
+| One More Thing. | M1 Chip/Apple Silicon, macOS Big Sur, Macbook Air, Mac Mini, MacBook Pro | [November 10,2020](https://www.youtube.com/watch?v=5AwdkGKmZ0I)  |   
 
-</td>
-<td>
-<ol>
-<li> Time Flies.</li>
-<li> Hi, Speed.</li>
-<li> One More Thing.</li>
-</ol>
-</td>
+Our task was to analyze the sentiment of tweets surrounding these events, and report our findings.  
 
-</td>
-<td>
-<ol>
-<li> Apple Watch, Apple Fitness+, Apple One, IPad</li>
-<li> HomePod Mini, IPhone 12, IPhone 12 Pro</li>
-<li> M1 Chip/Apple Silicon, macOS Big Sur, Macbook Air, Mac Mini, MacBook Pro</li>
-</ol>
-</td>
-
-</td>
-<td>
-<ul>
-<li> <a href=https://www.youtube.com/watch?v=b13xnFp_LJs&t=2353s>September 15,2020</a></li>
-<li> <a href=https://www.youtube.com/watch?v=KR0g-1hnQPA>October 13,2020</a></li>
-<li> <a href=https://www.youtube.com/watch?v=5AwdkGKmZ0I>November 10,2020</a></li>
-</ul>
-
-</td>
-
-</td>
-</tr>
-</table> 
-
-Our task was to analyze the sentiment of tweets surrounding these events, and report out findings.  
+  
 
 ## Business Problem
 
@@ -79,7 +47,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ## Next Steps
 
-There are instances where people use negative language in a positive way when describing apple products. For example, the phrase *'Apple M1 kills intel chips speed'* may be classified by our model as negative, when in fact it is positive. We developed a [small script](./scripts/tagger.py) that can be used to quickly tag tweets as positive/negative/neutral. Custom tagged tweets be saved in a .csv in your project directory. 
+There are instances where people use negative language in a positive way when describing apple products. For example, the phrase *'Apple M1 kills intel chips speed'* may be classified by our model as negative, when in fact it is positive. We developed a [small script](./scripts/tagger.py) that can be used to quickly tag tweets as positive/negative/neutral.
 
 ## For More Information
 
