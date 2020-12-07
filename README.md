@@ -3,7 +3,7 @@
 
 ![apple_event](./images/one-more-thing-november.jpg)
 
-**Authors:** [Dorjey Sherpa](Dorjeys3@gmail.com), [Brendan Ferris](brendanfrrs@gmail.com)
+**Authors:** [Dorjey Sherpa](https://www.linkedin.com/in/dorjey-sherpa-45501814a/), [Brendan Ferris](https://www.linkedin.com/in/brendangferris/)
 
 ## Overview
 
@@ -15,7 +15,11 @@ After every major event, thousands of people turn to social media to talk about 
 
 ## Data
 
-Using [twint](https://github.com/twintproject/twint), we were able to gather all tweets over the three month period between September and December which included the following terms/phrases: *IPhone 12, Apple Silicon, M1 MacBook, New MacBook, IPhone 12 Pro, New Apple, New IPhone, Silicon.* After removing non-english Tweets and duplicate posts, we obtained [985,657 observations](path_to_data). 
+Using [twint](https://github.com/twintproject/twint), we were able to gather all tweets over the three month period between September and December which included the following terms/phrases: *IPhone 12, Apple Silicon, M1 MacBook, New MacBook, IPhone 12 Pro, New Apple, New IPhone, Silicon.* After removing non-english Tweets and duplicate posts, we obtained a total of [985,657 observations and 14 features](https://drive.google.com/file/d/1Eg5JYtw_DtpUsX3sn_KQpSXVYQ8JyErt/view?usp=sharing). After data cleaning and feature engineering, we were left with 981,535 tweets with 24 main features. 
+
+This wordcloud illustrates the frequent terms among the tweets we gathered:
+
+![overall_wordcloud](./images/all_tweets_wordcloud.png) 
 
 ## Methods
 
@@ -35,7 +39,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ## For More Information
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum ut tristique et egestas. Consequat semper viverra nam libero justo laoreet sit. Fringilla ut morbi tincidunt augue interdum velit euismod in. Molestie at elementum eu facilisis. Scelerisque felis imperdiet proin fermentum leo. Commodo ullamcorper a lacus vestibulum sed. Semper eget duis at tellus. Fermentum dui faucibus in ornare. Sit amet nulla facilisi morbi tempus iaculis urna.
+See the full modeling/analysis notebooks [here](path/to/notebooks) or review our [presentation](path/to).
+
+For additional information, contact [Dorjey Sherpa](mailto:dorjeys3@gmail.com) or [Brendan Ferris](mailto:brendanfrrs@gmail.com).
 
 ## Repository Structure
 
