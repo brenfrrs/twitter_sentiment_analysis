@@ -4,6 +4,7 @@ from string import digits
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import nltk
 
+analyzer = SentimentIntensityAnalyzer()
 def sentiment_analyzer_scores(sentence):
     '''
     VADER Sentiment used to tag the.
@@ -12,7 +13,7 @@ def sentiment_analyzer_scores(sentence):
     Instantiate analyzer before running this function:
     analyzer = SentimentIntensityAnalyzer()
     '''
-    analyzer = SentimentIntensityAnalyzer()
+    global analyzer
 
     score = analyzer.polarity_scores(sentence)
 
