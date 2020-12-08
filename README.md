@@ -108,5 +108,28 @@ For additional information, contact [Dorjey Sherpa](mailto:dorjeys3@gmail.com) o
 ## Repository Structure
 
 <pre>
-Place file tree here.
+├── README.md
+├── data
+│   └── appletweet.csv
+├── data_cleaning.ipynb
+├── eda_notebook.ipynb
+├── images
+│   ├── all_tweets_wordcloud.png
+│   ├── feature_importance.png
+│   ├── one-more-thing-november.jpg
+│   ├── sentiment_by_term.png
+│   ├── sentiment_over_time.png
+│   ├── sentiment_per_search_term.png
+│   ├── sentiment_per_topic.png
+│   └── tweet_count_by_term.png
+├── modeling_dataframe_creation.ipynb
+├── modeling_notebook.ipynb
+├── scripts
+│   ├── classifier_script.py
+│   ├── scripts.py
+│   └── tagger.py
+├── slide_deck.pdf
+└── twitter_scraper.ipynb
+
+3 directories, 19 files
 </pre>
