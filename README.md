@@ -34,44 +34,47 @@ This wordcloud illustrates the frequent terms among the tweets we gathered:
 ## Methods
 ```
 Necessary Packages and Libraries:
+
 # To read and manipulate data
-Pandas
-Numpy
-Datetime
-Time
+	Pandas
+	Numpy
+	Datetime
+	Time
 # To scrape Twitter using twint
-Subprocess
+	Subprocess
 # For Natural Language Processing
-NLTK
-Wordcloud
-Gensim
-Textblob
-TfidfVectorizer
+	NLTK
+	Wordcloud
+	Gensim
+	Textblob
+	TfidfVectorizer
 # For Modeling
-Sklearn 
+	Sklearn 
 # For Visualizations
-Matplotlib
-Seaborn 
+	Matplotlib
+	Seaborn 
 ```
 Twitter was scraped using [twint](https://github.com/twintproject/twint). The code snippet can be found[here](https://github.com/brenfrrs/twitter_sentiment_analysis/blob/master/twitter_scraper.ipynb). 
 After removing all hashtags and noise, VaderSentiment was used to tag all clean tweets. This function can be found [here](https://github.com/brenfrrs/twitter_sentiment_analysis/blob/master/scripts/scripts.py). We then proceeded into preprocessing by using tokenizing and lemmatizing. Lemmatization was used to preserve the context of the word.
+
+During modeling, we reduced the size of the dataframe by randomly selecting 30,000 tweets from each tagged "sentiment" to generate a list of the important features. This was done to reduce training time.
 
 ## Results
 Through our analysis, we discovered there were more positve tweets than negative and neutral tweets. Figure below illustrates the change in people's tweet sentiment before and after the Apple events.
  
 ![sentiment over time](./images/sentiment_over_time.png)
 
-We hypothesized that most of the tweets would probably be about the new iPhone due to all the redesign and camera specification upgrades. Supporting our hypothesis, the figure be demonstrates that 55 percent of the tweets we gathered were regarding the new iPhone.
+We hypothesized that most of the tweets would probably be about the new iPhone due to the redesign and camera specification upgrades. Supporting our hypothesis, the figure be demonstrates that 55 percent of the tweets we gathered were regarding the new iPhone.
  
-![insert image of Percent of Tweets by Term](path_)
+![insert image of Percent of Tweets by Term](./images/tweet_count_by_term.png)
 
 When we look at the sentiment analysis by search term, we find that the new iPhone has neutral and positive sentements. Overall, this figure demonstrates that people recevied the Apple events with more positive and neutral sentiment than negative.
  
-![insert image of Percent of Sentiment by Term](path_)
+![insert image of Percent of Sentiment by Term](./images/sentiment_per_search_term.png)
 
 As illustrated in the figure below, we were able to generate topic and topic scores using Textblob. We then analyzed the overall sentiment per topic. Based on the topic sentiment, we note that in general, tweets regarding Apple are mostly postive and neutral as discovered by the timeseries analysis above. The negative sentiment per topic remains below 20%.
  
-![insert Sentiment count % for each topic](here)
+![insert Sentiment count % for each topic](./images/sentiment_per_topic.png)
 
 However, upon closer inspection, we see that topic 5 has the highest negative sentiment. We discovered topic 5 to be about the new iPhone packaging system (new iPhone will not contain a charging block or headphones in the box). 
 
@@ -82,7 +85,13 @@ Word: 0.020 "charger" + 0.009  "charging" + 0.009 "usb" + 0.009 "headphone" + 0.
 
 ## Conclusions
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum ut tristique et egestas. Consequat semper viverra nam libero justo laoreet sit. Fringilla ut morbi tincidunt augue interdum velit euismod in. Molestie at elementum eu facilisis. Scelerisque felis imperdiet proin fermentum leo. Commodo ullamcorper a lacus vestibulum sed. Semper eget duis at tellus. Fermentum dui faucibus in ornare. Sit amet nulla facilisi morbi tempus iaculis urna.
+The feature importance extracted from the RandomForestClassifier model using GridSearchCV state that the following were the top 10 features (greatest importance from left to right). 
+```
+'subjectivity score', 'fan', 'hand', 'marry', 'topic9', 'topic6', 'topic0', 'topic1', 'topic8', 'topic4'
+```
+![feature_importance](./images/feature_importance.png)
+
+The topics can be found in this [notebook.](https://github.com/brenfrrs/twitter_sentiment_analysis/blob/master/eda_notebook.ipynb)
 
 ## Next Steps
 
