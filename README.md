@@ -49,6 +49,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 There are instances where people use negative language in a positive way when describing apple products. For example, the phrase *'Apple M1 kills intel chips speed'* may be classified by our model as negative, when in fact it is positive. We developed a [small script](./scripts/tagger.py) that can be used to quickly tag tweets as positive/negative/neutral.
 
+Additional insights may also be gained from broadening the search terms used in analysis, as well as the time window. 
+
 ## For More Information
 
 See the full modeling/analysis notebooks [here](path/to/notebooks) or review our [presentation](path/to).
